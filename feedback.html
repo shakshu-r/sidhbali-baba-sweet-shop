@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Share your Sidhbali Baba Sweet Shop experience on our feedback wall." />
+    <title>Feedback Wall | Sidhbali Baba Sweet Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="feedback.css" />
+  </head>
+  <body class="feedback-page">
+    <div class="page-noise" aria-hidden="true"></div>
+    <div class="announcement"><span class="announcement-dot"></span> Freshly made today · Free delivery on orders above ₹799 <span class="announcement-link">Raksha Bandhan orders open <span>→</span></span></div>
+    <header class="site-header" id="top">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="index.html" aria-label="Sidhbali Baba Sweet Shop home"><span class="brand-mark"><span>SB</span></span><span class="brand-copy"><strong>Sidhbali Baba</strong><small>Sweet Shop</small></span></a>
+        <div class="nav-links"><a href="index.html#menu">Our mithai</a><a href="index.html#story">Our story</a><a href="index.html#celebrate">Celebrations</a><a class="active-link" href="feedback.html">Feedback wall</a></div>
+        <div class="nav-actions"><button class="icon-button theme-button" id="themeToggle" aria-label="Toggle color theme" title="Toggle color theme">☼</button><a class="button button-primary nav-home-button" href="index.html">Back to shop <span>↗</span></a></div>
+        <button class="mobile-menu-button" id="mobileMenuButton" aria-label="Open navigation menu"><span></span><span></span></button>
+      </nav>
+      <div class="mobile-nav" id="mobileNav"><a href="index.html#menu">Our mithai</a><a href="index.html#story">Our story</a><a href="index.html#celebrate">Celebrations</a><a href="feedback.html">Feedback wall</a></div>
+    </header>
+
+    <main>
+      <section class="feedback-hero container">
+        <div class="feedback-hero-copy reveal visible"><p class="eyebrow"><span class="eyebrow-line"></span> The sweet side of the internet</p><h1>Tell us how we did.<br /><em>No sugar-coating needed.</em></h1><p>Every review helps us make the next box a little better. Leave a note, rate your mithai and browse the wall of sweet things our customers have said.</p><div class="hero-proof"><span class="proof-star">✦</span><span><strong>4.9/5</strong> average mithaas rating<br /><small>from 2,800+ happy customers</small></span></div></div>
+        <div class="feedback-hero-art reveal reveal-delay-1 visible"><div class="art-splash"></div><div class="art-rakhi"><span>✽</span><span>✽</span></div><img src="assets/raksha-bandhan-gift.jpg" alt="Raksha Bandhan rakhi beside Indian sweets" /><div class="art-sticker sticker-top">made me<br /><strong>smile :)</strong></div><div class="art-sticker sticker-bottom">would<br /><strong>eat again</strong> ♥</div></div>
+      </section>
+
+      <section class="feedback-grid container">
+        <div class="feedback-form-column reveal"><div class="feedback-form-card"><div class="form-heading"><p class="eyebrow"><span class="eyebrow-line"></span> Leave a little love</p><h2>Your turn, sweet tooth.</h2><p>Tell us about your favourite bite, your celebration box or that one peda you secretly didn’t share.</p></div><form id="feedbackForm"><label for="feedbackName">Your name <span>*</span></label><input id="feedbackName" name="name" type="text" placeholder="e.g. Meera from Delhi" required /><label>How much mithaas? <span>*</span></label><div class="rating-picker" role="radiogroup" aria-label="Rating"><button type="button" class="rating-star" data-rating="1" aria-label="1 star">★</button><button type="button" class="rating-star" data-rating="2" aria-label="2 stars">★</button><button type="button" class="rating-star" data-rating="3" aria-label="3 stars">★</button><button type="button" class="rating-star" data-rating="4" aria-label="4 stars">★</button><button type="button" class="rating-star" data-rating="5" aria-label="5 stars">★</button><span class="rating-label" id="ratingLabel">Tap to rate</span></div><input type="hidden" name="rating" id="ratingValue" value="0" /><label for="feedbackMessage">Your sweet note <span>*</span></label><textarea id="feedbackMessage" name="message" rows="5" placeholder="The kaju katli disappeared suspiciously fast..." required></textarea><div class="form-bottom"><label class="check-label"><input type="checkbox" id="permission" checked /> <span>Okay to share this on the wall</span></label><button type="submit" class="button button-primary">Post feedback <span>↗</span></button></div></form><div class="form-success" id="formSuccess" aria-live="polite"><span>✦</span><div><strong>Sweet! Your note is on the wall.</strong><small>Thanks for making our day a little brighter.</small></div></div></div><section class="review-stream" aria-label="Customer reviews"><div class="review-stream-heading"><p class="eyebrow"><span class="eyebrow-line"></span> Sweet notes</p><h2>Customer reviews.</h2></div><div class="review-list" id="reviewList" aria-live="polite"></div></section></div>
+
+        <div class="meme-column reveal reveal-delay-1"><div class="meme-heading"><p class="eyebrow"><span class="eyebrow-line"></span> Extremely serious reviews</p><h2>The feedback wall.</h2></div><div class="meme-wall" id="memeWall"><article class="meme-card meme-yellow tilt-left"><span class="meme-tag">Expectation</span><p>“I’ll just have<br /><strong>one</strong> piece.”</p><div class="meme-face">◕‿◕</div><span class="meme-caption">— everyone before opening the box</span></article><article class="meme-card meme-pink tilt-right"><span class="meme-tag">Reality</span><div class="meme-big">BOX<br />GONE.</div><div class="meme-face">ಠ_ಠ</div><span class="meme-caption">— 7 minutes later</span></article><article class="meme-card quote-card"><span class="quote-mark-small">“</span><p>That rasmalai was so soft, it practically gave me a hug.</p><span>— Ananya, Jaipur</span></article><article class="meme-card meme-purple tilt-left"><span class="meme-tag">Brother logic</span><p>“Why buy a rakhi gift<br />when <strong>mithai is the gift?</strong>”</p><div class="meme-rakhi">◉──✿──◉</div><span class="meme-caption">— technically not wrong</span></article></div></div>
+      </section>
+
+      <section class="feedback-cta container reveal"><div><p class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> Come back soon</p><h2>Good vibes, sweet bites.</h2><p>Ready to create your own review?</p></div><a href="index.html#menu" class="button button-light">Find your mithai <span>→</span></a><span class="cta-sparkle">✦</span></section>
+    </main>
+
+    <footer class="site-footer"><div class="container footer-top"><a class="brand footer-brand" href="index.html"><span class="brand-mark"><span>SB</span></span><span class="brand-copy"><strong>Sidhbali Baba</strong><small>Sweet Shop</small></span></a><div class="footer-note">Share the sweetness.<br /><em>Pass it on.</em></div><div class="footer-links"><a href="index.html#menu">Menu</a><a href="index.html#story">Our story</a><a href="feedback.html">Feedback wall</a><a href="mailto:hello@sidhbalibaba.com">Contact</a></div></div><div class="container footer-bottom"><span>© 2013 Sidhbali Baba Sweet Shop</span><span>Freshness is our favourite ingredient.</span><span>Haridwar · India</span></div></footer>
+    <div class="toast" id="toast" role="status"><span class="toast-icon">✦</span><span id="toastText">Thank you for your feedback</span></div>
+    <script src="/__/firebase/8.10.1/firebase-app.js"></script>
+    <script src="/__/firebase/8.10.1/firebase-firestore.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="feedback.js"></script>
+  </body>
+</html>

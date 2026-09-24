@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sidhbali Baba Sweet Shop — handcrafted mithai, made fresh with love in Haridwar." />
+    <title>Sidhbali Baba Sweet Shop | Made with Mithaas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-noise" aria-hidden="true"></div>
+    <div class="announcement">
+      <span class="announcement-dot"></span>
+      Freshly made today · Free delivery on orders above ₹799
+      <span class="announcement-link">Raksha Bandhan orders open <span>→</span></span>
+    </div>
+
+    <header class="site-header" id="top">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="Sidhbali Baba Sweet Shop home">
+          <span class="brand-mark"><span>SB</span></span>
+          <span class="brand-copy">
+            <strong>Sidhbali Baba</strong>
+            <small>Sweet Shop</small>
+          </span>
+        </a>
+        <div class="nav-links">
+          <a href="#menu">Our mithai</a>
+          <a href="#story">Our story</a>
+          <a href="#celebrate">Celebrations</a>
+          <a href="feedback.html">Feedback wall</a>
+        </div>
+        <div class="nav-actions">
+          <button class="icon-button theme-button" id="themeToggle" aria-label="Toggle color theme" title="Toggle color theme"><span class="sun-icon">☼</span></button>
+          <button class="cart-button" id="cartOpen" aria-label="Open shopping bag">
+            <span class="cart-bag">▱</span>
+            <span class="cart-label">Bag</span>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+        </div>
+        <button class="mobile-menu-button" id="mobileMenuButton" aria-label="Open navigation menu"><span></span><span></span></button>
+      </nav>
+      <div class="mobile-nav" id="mobileNav">
+        <a href="#menu">Our mithai</a>
+        <a href="#story">Our story</a>
+        <a href="#celebrate">Celebrations</a>
+          <a href="feedback.html">Feedback wall</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="eyebrow-line"></span> A little sweetness goes a long way</p>
+          <h1>Make life a little <em>mithaas.</em></h1>
+          <p class="hero-description">Beautifully handcrafted Indian sweets, made the old-fashioned way — with pure ingredients, generous hearts and a whole lot of love.</p>
+          <div class="hero-actions">
+            <a href="#menu" class="button button-primary">Explore the mithai <span>↗</span></a>
+            <a href="#story" class="text-button">Our story <span>→</span></a>
+          </div>
+          <div class="hero-trust">
+            <div class="avatar-stack" aria-hidden="true"><span>R</span><span>M</span><span>A</span><span>+</span></div>
+            <p>Loved by <strong>12,000+</strong> sweet tooths</p>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal reveal-delay-1">
+          <div class="hero-glow"></div>
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
+          <div class="hero-photo-card main-photo">
+            <img src="assets/hero-assorted-sweets.jpg" alt="Assorted Indian sweets arranged on a festive platter" />
+            <div class="photo-caption"><span class="caption-dot"></span> Handcrafted daily</div>
+          </div>
+          <div class="hero-photo-card mini-photo mini-photo-one"><img src="assets/gulab-jamun.webp" alt="Warm gulab jamun topped with pistachios" /></div>
+          <div class="hero-photo-card mini-photo mini-photo-two"><img src="assets/kaju-katli.jpg" alt="Diamond shaped kaju katli sweets" /></div>
+          <div class="floating-note note-one"><span class="note-icon">✦</span><span>100% pure<br /><b>desi ghee</b></span></div>
+          <div class="floating-note note-two"><span class="note-icon">♡</span><span>Made with<br /><b>goodness</b></span></div>
+          <span class="hero-sparkle sparkle-one">✦</span><span class="hero-sparkle sparkle-two">✦</span><span class="hero-sparkle sparkle-three">·</span>
+        </div>
+      </section>
+
+      <section class="marquee-section" aria-label="Our specialties">
+        <div class="marquee-track">
+          <span>Pure desi ghee</span><i>✦</i><span>Small batch magic</span><i>✦</i><span>Made fresh daily</span><i>✦</i><span>Since 2013</span><i>✦</i><span>Pure desi ghee</span><i>✦</i><span>Small batch magic</span><i>✦</i><span>Made fresh daily</span><i>✦</i><span>Since 2013</span><i>✦</i>
+        </div>
+      </section>
+
+      <section class="menu-section container" id="menu">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow"><span class="eyebrow-line"></span> Pick your happy</p><h2>The good stuff.</h2></div>
+          <p class="section-intro">A little something for every mood, moment and celebration. Go on, treat yourself — or tie the sweetest rakhi.</p>
+        </div>
+        <div class="filter-row reveal reveal-delay-1" role="tablist" aria-label="Filter sweets">
+          <button class="filter-button active" data-filter="all" role="tab">All treats</button>
+          <button class="filter-button" data-filter="classic" role="tab">Classics</button>
+          <button class="filter-button" data-filter="milk" role="tab">Milk mithai</button>
+          <button class="filter-button" data-filter="gift" role="tab">Gift boxes</button>
+        </div>
+        <div class="product-grid" id="productGrid">
+          <article class="product-card reveal" data-category="classic" data-name="Gulab Jamun" data-price="240" data-unit="per kg">
+            <div class="product-image-wrap"><img src="assets/gulab-jamun.webp" alt="Gulab jamun" class="product-image" /><span class="product-badge">Best seller</span><button class="quick-add" data-add aria-label="Add Gulab Jamun to bag">+</button></div>
+            <div class="product-content"><div><h3>Gulab Jamun</h3><p>Soft, syrupy &amp; warm</p></div><div class="product-price"><strong>₹240</strong><span>/ kg</span></div></div>
+          </article>
+          <article class="product-card reveal reveal-delay-1" data-category="milk" data-name="Kaju Katli" data-price="720" data-unit="per kg">
+            <div class="product-image-wrap"><img src="assets/kaju-katli.jpg" alt="Kaju katli" class="product-image" /><span class="product-badge badge-rose">Festive pick</span><button class="quick-add" data-add aria-label="Add Kaju Katli to bag">+</button></div>
+            <div class="product-content"><div><h3>Kaju Katli</h3><p>Silky, nutty &amp; delicate</p></div><div class="product-price"><strong>₹720</strong><span>/ kg</span></div></div>
+          </article>
+          <article class="product-card reveal reveal-delay-2" data-category="classic" data-name="Motichoor Ladoo" data-price="420" data-unit="per kg">
+            <div class="product-image-wrap"><img src="assets/motichoor-ladoo.jpg" alt="Motichoor ladoo" class="product-image object-position-center" /><span class="product-badge badge-gold">Desi favourite</span><button class="quick-add" data-add aria-label="Add Motichoor Ladoo to bag">+</button></div>
+            <div class="product-content"><div><h3>Motichoor Ladoo</h3><p>Golden, grainy &amp; ghee-rich</p></div><div class="product-price"><strong>₹420</strong><span>/ kg</span></div></div>
+          </article>
+          <article class="product-card reveal" data-category="milk" data-name="Rasmalai" data-price="80" data-unit="2 pcs">
+            <div class="product-image-wrap"><img src="assets/rasmalai.jpg" alt="Rasmalai" class="product-image object-position-center" /><span class="product-badge badge-lilac">Chilled fresh</span><button class="quick-add" data-add aria-label="Add Rasmalai to bag">+</button></div>
+            <div class="product-content"><div><h3>Rasmalai</h3><p>Cloud-soft &amp; saffron-kissed</p></div><div class="product-price"><strong>₹80</strong><span>/ 2 pcs</span></div></div>
+          </article>
+          <article class="product-card reveal reveal-delay-1" data-category="milk" data-name="Mathura Peda" data-price="360" data-unit="per kg">
+            <div class="product-image-wrap"><img src="assets/peda-sweets.jpg" alt="Mathura peda" class="product-image object-position-center" /><span class="product-badge badge-green">Temple classic</span><button class="quick-add" data-add aria-label="Add Mathura Peda to bag">+</button></div>
+            <div class="product-content"><div><h3>Mathura Peda</h3><p>Caramelised, crumbly &amp; pure</p></div><div class="product-price"><strong>₹360</strong><span>/ kg</span></div></div>
+          </article>
+          <article class="product-card reveal reveal-delay-2" data-category="classic" data-name="Kesar Jalebi" data-price="260" data-unit="per kg">
+            <div class="product-image-wrap"><img src="assets/kesar-jalebi.jpg" alt="Kesar jalebi" class="product-image object-position-center" /><span class="product-badge badge-orange">Made to order</span><button class="quick-add" data-add aria-label="Add Kesar Jalebi to bag">+</button></div>
+            <div class="product-content"><div><h3>Kesar Jalebi</h3><p>Crunchy, juicy &amp; saffrony</p></div><div class="product-price"><strong>₹260</strong><span>/ kg</span></div></div>
+          </article>
+          <article class="product-card reveal" data-category="milk" data-name="Mawa Barfi" data-price="480" data-unit="per kg">
+            <div class="product-image-wrap"><img src="assets/mawa-barfi.webp" alt="Mawa barfi" class="product-image object-position-center" /><span class="product-badge badge-rose">Slow cooked</span><button class="quick-add" data-add aria-label="Add Mawa Barfi to bag">+</button></div>
+            <div class="product-content"><div><h3>Mawa Barfi</h3><p>Rich, milky &amp; melt-in-mouth</p></div><div class="product-price"><strong>₹480</strong><span>/ kg</span></div></div>
+          </article>
+          <article class="product-card reveal reveal-delay-1" data-category="gift" data-name="Sidhbali Gift Box" data-price="999" data-unit="8 varieties">
+            <div class="product-image-wrap"><img src="assets/raksha-bandhan-gift.jpg" alt="Raksha Bandhan sweets and gift box with rakhi" class="product-image object-position-center" /><span class="product-badge badge-gold">Gift it</span><button class="quick-add" data-add aria-label="Add Sidhbali Gift Box to bag">+</button></div>
+            <div class="product-content"><div><h3>Sidhbali Gift Box</h3><p>8 varieties, one big smile</p></div><div class="product-price"><strong>₹999</strong><span>/ box</span></div></div>
+          </article>
+        </div>
+        <div class="menu-foot reveal"><span>Showing our most-loved treats</span><a href="#menu" id="viewAll">View full menu <span>↗</span></a></div>
+      </section>
+
+      <section class="story-section container" id="story">
+        <div class="story-image reveal"><img src="assets/peda-sweets.jpg" alt="Traditional sweets prepared for a celebration" /><div class="story-stamp"><span>Since</span><strong>2013</strong><span>with love</span></div></div>
+        <div class="story-copy reveal reveal-delay-1"><p class="eyebrow"><span class="eyebrow-line"></span> The Sidhbali way</p><h2>Tradition, with a little <em>twinkle.</em></h2><p>From a tiny counter in Haridwar to celebrations across the country, our promise has stayed deliciously simple: use the good stuff, cook with patience and never send out a box that we wouldn’t proudly gift ourselves.</p><p>Every piece is made in small batches by our halwais, using recipes that have travelled through three generations.</p><a href="#celebrate" class="button button-dark">Meet the makers <span>↗</span></a></div>
+      </section>
+
+      <section class="celebrate-section container" id="celebrate">
+        <div class="celebrate-card reveal"><div class="celebrate-copy"><p class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> Make it memorable</p><h2>Big day? <em>We’ve got the sweet part.</em></h2><p>Wedding favours, office hampers or a Raksha Bandhan surprise — our celebration boxes are made to make an entrance.</p><a href="mailto:hello@sidhbalibaba.com?subject=Celebration%20order%20enquiry" class="button button-light">Plan a celebration <span>↗</span></a></div><div class="celebrate-art"><img src="assets/raksha-bandhan-gift.jpg" alt="Raksha Bandhan rakhi and sweet gift box" /><span class="celebrate-star">✦</span><span class="celebrate-circle"></span></div></div>
+      </section>
+
+      <section class="quote-section container reveal"><span class="quote-mark">“</span><blockquote>Happiness is homemade.<br /><em>Ours just happens to be bite-sized.</em></blockquote><p>— The Sidhbali family</p></section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-top"><a class="brand footer-brand" href="#top"><span class="brand-mark"><span>SB</span></span><span class="brand-copy"><strong>Sidhbali Baba</strong><small>Sweet Shop</small></span></a><div class="footer-note">Share the sweetness.<br /><em>Pass it on.</em></div><div class="footer-links"><a href="#menu">Menu</a><a href="#story">Our story</a><a href="feedback.html">Feedback wall</a><a href="mailto:hello@sidhbalibaba.com">Contact</a></div></div>
+      <div class="container footer-bottom"><span>© 2013 Sidhbali Baba Sweet Shop</span><span>Freshness is our favourite ingredient.</span><span>Haridwar · India</span></div>
+    </footer>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping bag" aria-hidden="true">
+      <div class="cart-header"><div><p class="eyebrow">Your sweet selection</p><h2>Your bag <span id="cartHeaderCount">(0)</span></h2></div><button class="close-button" id="cartClose" aria-label="Close shopping bag">×</button></div>
+      <div class="cart-items" id="cartItems"><div class="empty-cart"><span class="empty-icon">✦</span><h3>Your bag is waiting.</h3><p>Add a little mithaas to your day.</p><button class="button button-primary" id="startShopping">Browse treats</button></div></div>
+      <div class="cart-footer"><div class="cart-total"><span>Subtotal</span><strong id="cartTotal">₹0</strong></div><p class="delivery-note"><span>✓</span> Taxes calculated at checkout · Fresh delivery available</p><button class="button button-primary checkout-button" id="checkoutButton">Continue to checkout <span>→</span></button></div>
+    </aside>
+    <div class="toast" id="toast" role="status"><span class="toast-icon">✦</span><span id="toastText">Added to your bag</span></div>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+    <script src="script.js"></script>
+  </body>
+</html>
