@@ -3,7 +3,10 @@ const feedbackForm = document.getElementById('feedbackForm');
 const ratingValue = document.getElementById('ratingValue');
 const ratingLabel = document.getElementById('ratingLabel');
 const formSuccess = document.getElementById('formSuccess');
+const formSuccessTitle = document.getElementById('formSuccessTitle');
+const formSuccessMessage = document.getElementById('formSuccessMessage');
 const reviewList = document.getElementById('reviewList');
+const memeWall = document.getElementById('memeWall');
 const toast = document.getElementById('toast');
 const toastText = document.getElementById('toastText');
 let toastTimer;
@@ -11,7 +14,7 @@ let db;
 let reviewsUnsubscribe;
 
 const REVIEWS_COLLECTION = 'reviews';
-const MAX_VISIBLE_REVIEWS = 8;
+const REVIEWS_ON_WALL = 6;
 const ratingNames = {
   0: 'Tap to rate',
   1: 'Needs more mithaas',
@@ -101,14 +104,24 @@ function createReviewCard(review) {
 }
 
 function renderReviews(reviews) {
+  memeWall.querySelectorAll('.user-review').forEach((card) => card.remove());
   reviewList.querySelectorAll('.user-review').forEach((card) => card.remove());
 
-  const fragment = document.createDocumentFragment();
-  reviews.slice(0, MAX_VISIBLE_REVIEWS).forEach((review) => {
-    fragment.appendChild(createReviewCard(review));
+  const wallFragment = document.createDocumentFragment();
+  const customerFragment = document.createDocumentFragment();
+  let wallReviewCount = 0;
+
+  reviews.forEach((review) => {
+    if (review.permission === true && wallReviewCount < REVIEWS_ON_WALL) {
+      wallFragment.appendChild(createReviewCard(review));
+      wallReviewCount += 1;
+    } else {
+      customerFragment.appendChild(createReviewCard(review));
+    }
   });
 
-  reviewList.appendChild(fragment);
+  memeWall.prepend(wallFragment);
+  reviewList.appendChild(customerFragment);
 }
 
 function connectFirestoreReviews() {
@@ -122,7 +135,6 @@ function connectFirestoreReviews() {
   reviewsUnsubscribe = db
     .collection(REVIEWS_COLLECTION)
     .orderBy('createdAt', 'desc')
-    .limit(MAX_VISIBLE_REVIEWS)
     .onSnapshot((snapshot) => {
       const reviews = snapshot.docs.map((doc) => doc.data());
       renderReviews(reviews);
@@ -134,8 +146,6 @@ function connectFirestoreReviews() {
 }
 
 async function saveReview(review) {
-  if (!review.permission) return 'private';
-
   if (!db || !window.firebase || !firebase.firestore) {
     throw new Error('Firebase is not connected');
   }
@@ -144,10 +154,10 @@ async function saveReview(review) {
     name: review.name,
     message: review.message,
     rating: review.rating,
-    permission: true,
+    permission: review.permission,
     createdAt: firebase.firestore.FieldValue.serverTimestamp()
   });
-  return 'firebase';
+  return review.permission ? 'wall' : 'customer';
 }
 
 feedbackForm.addEventListener('submit', async (event) => {
@@ -166,15 +176,20 @@ feedbackForm.addEventListener('submit', async (event) => {
 
   try {
     const saveTarget = await saveReview(review);
+    const isWallReview = saveTarget === 'wall';
+    formSuccessTitle.textContent = isWallReview
+      ? 'Sweet! Your note is on the wall.'
+      : 'Sweet! Your note is in customer reviews.';
+    formSuccessMessage.textContent = isWallReview
+      ? 'Thanks for making our day a little brighter.'
+      : 'Thanks for sharing your experience with us.';
     formSuccess.classList.add('show');
     feedbackForm.reset();
     selectRating(0);
 
-    if (saveTarget === 'private') {
-      showToast('Thanks — your private feedback will not be published');
-    } else {
-      showToast('Feedback posted — now visible on every device!');
-    }
+    showToast(isWallReview
+      ? 'Feedback posted to the wall — now visible on every device!'
+      : 'Feedback posted to customer reviews — now visible on every device!');
 
     setTimeout(() => formSuccess.classList.remove('show'), 4300);
   } catch (error) {

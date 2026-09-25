@@ -12,7 +12,8 @@ service cloud.firestore {
     //   - name: string (required, 2-80 chars) - Public display name.
     //   - message: string (required, 10-500 chars) - Public review text.
     //   - rating: integer (required, 1-5) - Customer star rating.
-    //   - permission: bool (required, must be true) - Consent to publish.
+    //   - permission: bool (required) - true routes to the wall; false routes
+    //     to the customer reviews list.
     //   - createdAt: timestamp (required, immutable by no-update policy) - Server timestamp.
     //
     // Reviews are intentionally public because the website displays them on a
@@ -48,7 +49,6 @@ service cloud.firestore {
         data.rating >= 1 &&
         data.rating <= 5 &&
         data.permission is bool &&
-        data.permission == true &&
         isRecentTimestamp(data.createdAt);
     }
 
