@@ -4,6 +4,7 @@
     "ignore": [
       "firebase.json",
       "firebase-debug.log",
+      "firepit-log.txt",
       "firestore.rules",
       ".firebase-tools/**",
       ".codex/**",
