@@ -83,14 +83,15 @@ function getReviewFromForm(formData) {
   };
 }
 
-function createReviewCard(review) {
+function createReviewCard(review, index) {
   const card = document.createElement('article');
   const quoteMark = document.createElement('span');
   const message = document.createElement('p');
   const meta = document.createElement('span');
   const safeRating = Math.max(1, Math.min(5, Number(review.rating) || 1));
 
-  card.className = 'meme-card quote-card user-review';
+  const theme = (index % 8) + 1;
+  card.className = `meme-card quote-card user-review review-theme-${theme}`;
   quoteMark.className = 'quote-mark-small';
   quoteMark.textContent = '“';
   message.textContent = review.message;
@@ -104,8 +105,8 @@ function renderReviews(reviews) {
   reviewList.querySelectorAll('.user-review').forEach((card) => card.remove());
 
   const fragment = document.createDocumentFragment();
-  reviews.slice(0, MAX_VISIBLE_REVIEWS).forEach((review) => {
-    fragment.appendChild(createReviewCard(review));
+  reviews.slice(0, MAX_VISIBLE_REVIEWS).forEach((review, index) => {
+    fragment.appendChild(createReviewCard(review, index));
   });
 
   reviewList.appendChild(fragment);
